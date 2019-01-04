@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, View, Image } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
+import CustomButton from './CustomButton';
 
 const AlbumDetail = ({album}) => {
 const {title, artist, thumbnail_image, image} = album;
@@ -12,6 +13,7 @@ const {
     headerTextStyle,
     imageStyle
 } = styles;
+
     return (
         <Card>
             <CardSection>
@@ -26,6 +28,7 @@ const {
                     <Text> {artist} </Text>
                 </View>
             </CardSection>
+
             <CardSection>
                 <Image 
                     source = {{uri: image}}
@@ -33,6 +36,11 @@ const {
                     >
                 </Image>
             </CardSection>
+
+            <CardSection>
+               <CustomButton imageUrl={image}/> 
+            </CardSection>
+            
         </Card>
     );
 };
